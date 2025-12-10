@@ -10,7 +10,7 @@ const Hero = () => {
 <div className='text-center p-6 '>
     <h1 className='text-4xl md:text-9xl font-bold tracking-tighter uppercase mb-4'>Vacation <br />Ready</h1>
     <p className='text-sm tracking-tighter md:text-lg mb-6'>Explore our vacation-ready outfits with fast worldwide shipping</p>
-<Link to="/shop" className='px-4 py-2 text-sm bg-white text-black hover:bg-black hover:text-white transition-colors duration-75'>
+<Link to="/shopping/all" className='px-4 py-2 text-sm bg-white text-black hover:bg-black hover:text-white transition-colors duration-75'>
 Shop now
 </Link>
 </div>
