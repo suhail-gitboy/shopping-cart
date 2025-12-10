@@ -20,11 +20,11 @@ const ProductCollection = () => {
     },[])
 const sidebarref=useRef(null)
 
-const [issidebaropen,Setisidebar]=useState(false)
+const [issidebaropen,Setisidebar]=useState(true)
      
 const outsideClick=(e)=>{
 
-    if( issidebaropen  && e.target!==sidebarref.current){
+    if(e.target==sidebarref.current){
         Setisidebar(false)
     }
 
@@ -37,10 +37,10 @@ const Toggle=()=>{
     Setisidebar(!issidebaropen)
 }
   return (
-    <div onClick={outsideClick}  className='flex flex-col lg:flex-row'>
+    <div ref={sidebarref}   onClick={outsideClick}  className='flex flex-col lg:flex-row'>
         <button className='lg:hidden border p-2 flex justify-center items-center' onClick={Toggle}><FaFilter  className='mr-2'/>Filter</button>
 
-      <div  ref={sidebarref}   className={`${issidebaropen?"translate-x-0":"-translate-x-full"} fixed inset-y-0 z-30 left-0 w-64 bg-gray-100 overflow-y-auto transition-transform duration-150 lg:static lg:translate-x-0`}>
+      <div   className={`${issidebaropen?"translate-x-0":"-translate-x-full"} fixed inset-y-0 z-30 left-0 w-64 bg-gray-100 overflow-y-auto transition-transform duration-150 lg:static lg:translate-x-0`}>
         <div className='flex justify-end items-end p-5 lg:hidden' onClick={()=>Setisidebar(false)}>
              <FaTimes className="text-2xl text-black " />
         </div>
